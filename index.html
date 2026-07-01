@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operación Directa — Rodolfo Buitrago</title>
+<meta name="description" content="Sistema completo de captación en 8 semanas: oferta, contenido, infraestructura GHL y ventas. Supervisión 1:1 directa. Protocolo OCV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAFA;
+    --ink:#111111;
+    --accent:#C1440E;
+    --accent-dark:#A33A0C;
+    --ink-secondary:#444444;
+    --label:#888888;
+    --border:#CCCCCC;
+    --surface:#F0F0F0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  .label{
+    font-size:11px;font-weight:500;text-transform:uppercase;
+    letter-spacing:0.2em;color:var(--label);
+  }
+  a.btn{
+    display:inline-block;
+    background:var(--accent);
+    color:#FAFAFA;
+    font-family:'DM Sans',sans-serif;
+    font-size:13px;font-weight:500;
+    text-transform:uppercase;letter-spacing:0.08em;
+    padding:18px 36px;
+    text-decoration:none;
+    border-radius:2px;
+    transition:background 0.2s ease;
+  }
+  a.btn:hover, a.btn:focus-visible{background:var(--accent-dark);}
+  a.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  /* HERO */
+  .hero{padding:120px 0 96px;border-bottom:1px solid var(--border);}
+  .hero .label{margin-bottom:24px;}
+  .hero h1{
+    font-size:clamp(38px,6vw,64px);
+    font-weight:900;
+    max-width:11ch;
+    margin-bottom:28px;
+  }
+  .hero p.sub{
+    font-size:19px;color:var(--ink-secondary);
+    max-width:52ch;margin-bottom:40px;
+  }
+
+  /* SECTION GENERIC */
+  section{padding:80px 0;border-bottom:1px solid var(--border);}
+  section h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin-bottom:16px;}
+  section .intro{color:var(--ink-secondary);max-width:60ch;margin-bottom:48px;}
+
+  /* PROTOCOLO OCV */
+  .ocv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
+  .ocv-card{background:var(--bg);padding:36px 28px;}
+  .ocv-card .letter{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:44px;color:var(--accent);line-height:1;margin-bottom:16px;
+  }
+  .ocv-card h3{font-size:22px;font-weight:700;margin-bottom:10px;}
+  .ocv-card p{font-size:15px;color:var(--ink-secondary);}
+
+  /* TIMELINE */
+  .timeline{border-top:1px solid var(--border);}
+  .week{
+    display:grid;grid-template-columns:64px 140px 1fr;gap:20px;
+    align-items:baseline;
+    padding:20px 0;border-bottom:1px solid var(--border);
+  }
+  .week .num{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;color:var(--accent);}
+  .week .pillar{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--label);}
+  .week .focus{font-size:16px;color:var(--ink);}
+
+  /* CHECKLIST */
+  .checklist{list-style:none;}
+  .checklist li{
+    display:grid;grid-template-columns:28px 1fr;gap:16px;
+    padding:18px 0;border-bottom:1px solid var(--border);
+    font-size:16px;
+  }
+  .checklist li:last-child{border-bottom:none;}
+  .checklist .n{font-family:'Playfair Display',serif;font-weight:700;color:var(--accent);}
+  .checklist .desc{color:var(--ink-secondary);font-size:14px;margin-top:4px;}
+  .note{
+    margin-top:32px;padding:20px 24px;background:var(--surface);
+    font-size:14px;color:var(--ink-secondary);border-left:3px solid var(--accent);
+  }
+
+  /* PRICING */
+  .price-box{
+    background:var(--ink);color:var(--bg);
+    padding:56px 48px;
+  }
+  .price-box .label{color:#999999;}
+  .price-box h2{color:var(--bg);}
+  .price-value{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:clamp(48px,7vw,72px);
+    color:var(--bg);margin:20px 0 8px;
+  }
+  .price-value span{font-size:20px;font-weight:500;color:#999999;font-family:'DM Sans',sans-serif;}
+  .includes, .excludes{margin-top:36px;}
+  .includes h4, .excludes h4{
+    font-size:12px;text-transform:uppercase;letter-spacing:0.15em;
+    color:#999999;margin-bottom:14px;font-weight:500;
+  }
+  .includes ul, .excludes ul{list-style:none;font-size:15px;line-height:2;}
+  .includes li:before{content:"— ";color:var(--accent);}
+  .excludes li{color:#999999;}
+  .excludes li:before{content:"— ";}
+  .price-cta{margin-top:44px;}
+
+  /* GUARANTEE */
+  .guarantee{background:var(--surface);}
+  .guarantee .intro{color:var(--ink-secondary);}
+
+  /* FINAL CTA */
+  .final{text-align:center;padding:100px 0;border-bottom:none;}
+  .final h2{font-size:clamp(30px,5vw,44px);max-width:16ch;margin:0 auto 32px;}
+
+  footer{padding:32px 0;text-align:center;font-size:12px;color:var(--label);}
+
+  @media(max-width:720px){
+    .ocv-grid{grid-template-columns:1fr;}
+    .week{grid-template-columns:40px 1fr;}
+    .week .pillar{grid-column:2;order:2;}
+    .week .focus{grid-column:2;order:3;}
+    .price-box{padding:40px 24px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="label">Operación Directa · Protocolo OCV</p>
+    <h1>Vendes servicios sin sistema de captación. En 8 semanas construimos el tuyo.</h1>
+    <p class="sub">Oferta clara, contenido con IA, infraestructura técnica operando y proceso de ventas medible — construido contigo, sesión por sesión, no entregado en un PDF.</p>
+    <a class="btn" href="https://link.centralize.es/payment-link/6a4488e9a655fa0b802a21d5" id="cta-hero">Empezar mi Operación Directa</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">El método</p>
+    <h2>Protocolo OCV</h2>
+    <p class="intro">Tres etapas, en este orden, porque cada una depende de que la anterior esté resuelta. No se puede vender con una oferta confusa. No se puede automatizar sin contenido que atraiga al cliente correcto.</p>
+    <div class="ocv-grid">
+      <div class="ocv-card">
+        <div class="letter">O</div>
+        <h3>Oferta</h3>
+        <p>Nicho, promesa y diferenciador documentados. Sin esto, ningún anuncio ni mensaje convierte.</p>
+      </div>
+      <div class="ocv-card">
+        <div class="letter">C</div>
+        <h3>Contenido</h3>
+        <p>Sistema de posicionamiento y producción con Gems — no publicaciones sueltas por intuición.</p>
+      </div>
+      <div class="ocv-card">
+        <div class="letter">V</div>
+        <h3>Ventas</h3>
+        <p>Guion de cierre entrenado, secuencias de seguimiento activas, campaña lista para lanzar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Estructura</p>
+    <h2>8 semanas, 8 sesiones, 1:1</h2>
+    <p class="intro">Una sesión semanal de 1 hora contigo. Entre sesiones, Rodolfo construye tu subcuenta, tu landing, tu agente de WhatsApp con IA y tus automatizaciones.</p>
+    <div class="timeline">
+      <div class="week"><span class="num">1</span><span class="pillar">Oferta</span><span class="focus">Diagnóstico del negocio y checkpoint regulatorio del sector</span></div>
+      <div class="week"><span class="num">2</span><span class="pillar">Oferta</span><span class="focus">Oferta empaquetada: promesa, garantía, precio, diferenciador</span></div>
+      <div class="week"><span class="num">3</span><span class="pillar">Contenido</span><span class="focus">Posicionamiento de autoridad</span></div>
+      <div class="week"><span class="num">4</span><span class="pillar">Contenido</span><span class="focus">Sistema de contenido recurrente con Gems</span></div>
+      <div class="week"><span class="num">5</span><span class="pillar">Infraestructura</span><span class="focus">Prueba en vivo del ecosistema: landing y agente de WhatsApp</span></div>
+      <div class="week"><span class="num">6</span><span class="pillar">Ventas</span><span class="focus">Entrenamiento del guion de cierre</span></div>
+      <div class="week"><span class="num">7</span><span class="pillar">Ventas</span><span class="focus">Secuencias de WhatsApp y campaña lista para lanzar</span></div>
+      <div class="week"><span class="num">8</span><span class="pillar">Cierre</span><span class="focus">Checklist de entrega y arranque del mes de soporte</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Lo que te llevas</p>
+    <h2>5 entregables verificables</h2>
+    <p class="intro">El programa se cierra cuando estos 5 puntos están cumplidos — no cuando se acaba el tiempo.</p>
+    <ul class="checklist">
+      <li><span class="n">01</span><div><div>Oferta documentada</div><div class="desc">Promesa, garantía, precio y diferenciador, aprobados por escrito.</div></div></li>
+      <li><span class="n">02</span><div><div>Landing publicada</div><div class="desc">URL en vivo, accesible, funcionando.</div></div></li>
+      <li><span class="n">03</span><div><div>Agente de WhatsApp con IA</div><div class="desc">Responde correctamente 3 casos de prueba reales.</div></div></li>
+      <li><span class="n">04</span><div><div>Campaña de ads configurada</div><div class="desc">Segmentación y creativos listos para activar.</div></div></li>
+      <li><span class="n">05</span><div><div>Secuencias de seguimiento</div><div class="desc">3 secuencias de WhatsApp — caliente, tibio, frío — activas en tu GHL.</div></div></li>
+    </ul>
+    <div class="note">Estos 5 puntos certifican que el sistema está construido y operando. No certifican resultados de venta: eso depende de cómo actives el sistema una vez entregado.</div>
+  </div>
+</section>
+
+<section class="guarantee">
+  <div class="wrap">
+    <p class="label">Garantía</p>
+    <h2>Extensión, no promesa abierta</h2>
+    <p class="intro">Si al cierre de la semana 8 falta algún punto del checklist por atraso de Rodolfo Buitrago, el programa se extiende sin costo hasta completarlo — máximo 2 semanas adicionales, una sola vez.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="price-box">
+      <p class="label">Inversión</p>
+      <h2>Operación Directa</h2>
+      <div class="price-value">USD $1.500 <span>pago único</span></div>
+      <div class="includes">
+        <h4>Incluye</h4>
+        <ul>
+          <li>8 sesiones 1:1 de supervisión directa</li>
+          <li>Construcción de tu ecosistema en GHL</li>
+          <li>Acceso a los Gems del Protocolo OCV</li>
+          <li>1 mes de soporte después del cierre del programa</li>
+        </ul>
+      </div>
+      <div class="excludes">
+        <h4>No incluye</h4>
+        <ul>
+          <li>Costo de la plataforma GHL</li>
+          <li>Costo de inversión en ads</li>
+          <li>Gestión de campañas, video o diseño</li>
+        </ul>
+      </div>
+      <div class="price-cta">
+        <a class="btn" href="https://link.centralize.es/payment-link/6a4488e9a655fa0b802a21d5" id="cta-price">Empezar mi Operación Directa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>El sistema no se aprende. Se construye.</h2>
+    <a class="btn" href="https://link.centralize.es/payment-link/6a4488e9a655fa0b802a21d5" id="cta-final">Empezar mi Operación Directa</a>
+  </div>
+</section>
+
+<footer>Rodolfo Buitrago — Arquitectura Operacional con IA para Negocios en LATAM</footer>
+
+</body>
+</html>
